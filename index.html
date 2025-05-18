@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/41969da365.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="scrollIt.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <!---header-->
+    <header class="main-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+
+                <!--name-->
+                <a href="#" class="navbar-brand">
+                    <h4 class="mb-0">Kritika <span class="text-primary">Choubey</span>
+                    </h4>
+                </a>
+
+                <!--menu-->
+                <div class="collapse navbar-collapse justify-content-end" 
+                id="navbar-collapse-toggle">
+                    <ul class="navbar-nav mx-auto">
+                        <li>
+                            <a href="#home" class="nav-link" data-scroll-nav="0">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="nav-link" data-scroll-nav="1">About Me</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="nav-link" data-scroll-nav="2">Services</a>
+                        </li>
+                        <li>
+                            <a href="#skill" class="nav-link" data-scroll-nav="3">Skills</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="nav-link " data-scroll-nav="4">Portfolio</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--button conatct now-->
+                <div class="ms-auto d-none d-lg-block">
+                    <a class= "colored-btn"   href="#contact">Contact Now</a>
+                </div>
+
+                <!--mobile menu toggle-->
+
+                <button class="navbar-toggler collapsed" type="button"
+                data-bs-toggle="collapse"  
+                data-bs-target = "#navbar-collapse-toggle">button   
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+            </div>
+        </nav>
+    </header>
+
+    <!--main-->
+    <main>
+        <!--home section-->
+        <section id="home" class="home-section bg-gray" data-scroll-index="0">
+            <div class="container">
+                <div class="anim-elements">
+                    <div class="anim-element"><i class="fa-brands fa-html5"></i></div>
+                    <div class="anim-element"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="anim-element"><i class="fa-brands fa-js"></i></div>
+                    <div class="anim-element"><i class="fa-regular fa-file-code"></i></div>
+                    <div class="anim-element"><i class="fa-brands fa-react"></i></div>
+                </div>
+                <div class="row gy-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="home-intro text-center text-lg-start">
+                                <h6>Hi, My name is Kritika,</h6>
+                                <h1>I'm a <span id="type-it"></span> </h1>
+                                <a href="#about" class="colored-btn mt-1">
+                                    About Me
+                                </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                        <div class="home-image text-center">
+                            <img src="photo1.png" alt="">  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--about us-->
+        <section id="about" class="section" data-scroll-index="1">
+            <div class="container">
+                <div class="row gy-5 align-items-center">
+                    <div class="col-lg-6 text-center">
+                        <img src="photo2.png" alt="" width="700px" height="700px">
+                    </div>
+                    <div class="col-lg-6 ps-lg-5">
+                            <div class="about-text">
+                                <h3 class="h1 mb-3 text-dark fw-semibold">
+                                    I'm passionate Frontend Developer 
+                                </h3>
+                                <p>
+                                    crafting clean, responsive web experiences. Currently diving into the world of Backend Development to become a full-stack powerhouse.
+                                </p>
+                                <div class="row pt-2">
+                                    <div class="col-6 col-md-4">
+                                        <h5 class="text-primary fw-semibold fs-4 mb-0">10+</h5>
+                                        <span class="text-dark">Projects Completed</span>
+                                    </div>
+
+                                    <div class="col-6 col-md-4">
+                                        <h5 class="text-primary fw-semibold fs-4 mb-0">3+</h5>
+                                        <span class="text-dark">Happy Clients</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!--service section-->
+        <section id="services" class="section bg-gray"
+                    style="background-image:url(gradient1.png);
+                    background-repeat:no-repeat;
+                    background-size:cover; " data-scroll-index="2">
+            <div class="container">
+                <div class="section-heading">
+                    <h3>My Services</h3>
+                </div>
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <div class="feature-box bg-1" style="background-color:#9BD3D0;">
+                            <div class="icon">
+                                <i class="fa-solid fa-brush fa-rotate-by" style="color: #000000; --fa-rotate-angle: 60deg; height:20px; width:20px;"></i>
+                            </div>
+
+                            <div class="content">
+                                <h5>Web Design</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor officia ut reiciendis iure obcaecati dignissimos delectus recusandae eum cumque amet dolores in, officiis hic ullam distinctio, optio autem, veniam rerum.</p>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <div class="col-md-6">
+                        <div class="feature-box bg-2" style=" background-color: #FEC447;">
+                            <div class="icon">
+                                <i class="fa-solid fa-code" style="color: #000000;"></i>
+                            </div>
+
+                            <div class="content">
+                                <h5>Development</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor officia ut reiciendis iure obcaecati dignissimos delectus recusandae eum cumque amet dolores in, officiis hic ullam distinctio, optio autem, veniam rerum.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                
+                    <div class="col-md-6">
+                        <div class="feature-box bg-3" style="background-color:#FECCB5;">
+                            <div class="icon">
+                                <i class="fa-solid fa-wand-magic-sparkles" style="color: #000000;"></i>
+                            </div>
+
+                            <div class="content">
+                                <h5>Video Editing</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor officia ut reiciendis iure obcaecati dignissimos delectus recusandae eum cumque amet dolores in, officiis hic ullam distinctio, optio autem, veniam rerum.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-6">
+                        <div class="feature-box bg-4" style="background-color:#d2ceff;">
+                            <div class="icon">
+                                <i class="fa-regular fa-file" style="color: #000000;"></i>
+                            </div>
+
+                            <div class="content">
+                                <h5>Content</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor officia ut reiciendis iure obcaecati dignissimos delectus recusandae eum cumque amet dolores in, officiis hic ullam distinctio, optio autem, veniam rerum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            
+
+        </section>
+
+        <!--skills-->
+        <section id="skill" class="section" data-scroll-index="3">
+            <div class="container">
+                <div class="row">
+                    <div class="row gy-5">
+                        <div class="col-lg-6">
+                            <div class="section-heading text-start">
+                                <h3>My Skils</h3>
+                            </div>
+                            <div class="skill-box">
+                                <div class="row g-3">
+                                    <div class="col-6 col-md-4 col-lg-6">
+                                        <div class="feature-box feature-box-small bg-1" style=background-color:#9BD3D0;>
+                                            <div class="icon">
+                                                <i class="fa-brands fa-html5" style="color: #065721;"></i>
+                                            </div>
+                                            <h6>HTML</h6>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-md-4 col-lg-6">
+                                        <div class="feature-box feature-box-small bg-1" style=background-color:#c075e2;>
+                                            <div class="icon">
+                                                <i class="fa-brands fa-css" style="color: #f490f1;"></i>
+                                            </div>
+                                            <h6>CSS</h6>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-md-4 col-lg-6">
+                                        <div class="feature-box feature-box-small bg-1" style=background-color:#ffff77;>
+                                            <div class="icon">
+                                                <i class="fa-brands fa-js" style="color: #FFD43B;"></i>
+                                            </div>
+                                            <h6>Javascript</h6>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-6">
+                                        <div class="feature-box feature-box-small bg-1" style=background-color:#efd0d0;>
+                                            <div class="icon">
+                                                <i class="fa-brands fa-java" style="color: #aa1313;"></i>
+
+                                            </div>
+                                            <h6>Java</h6>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-md-4 col-lg-6">
+                                        <div class="feature-box feature-box-small bg-1" style=background-color:#b0f1fc;>
+                                            <div class="icon">
+                                                <i class="fa-brands fa-react" style="color: #74C0FC;"></i>
+                                            </div>
+                                            <h6>Reactjs</h6>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-6">
+                                        <div class="feature-box feature-box-small bg-1" style=background-color:#bffacb;>
+                                            <div class="icon">
+                                                <i class="fa-solid fa-database" style="color: #67bc38;"></i>
+                                            </div>
+                                            <h6>SQL</h6>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-md-4 col-lg-6">
+                                        <div class="feature-box feature-box-small bg-1" style=background-color:#88a7f1;>
+                                            <div class="icon">
+                                                <i class="fa-brands fa-node-js" style="color: #109e9b;"></i>
+                                            </div>
+                                            <h6>Nodejs</h6>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <img src="skill.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--work section-->
+        <section id="portfolio " class="section bg-gray" data-scroll-index="4">
+            <div class="container">
+                <div class="section-heading">
+                    <h3>My Projects</h3>
+                </div>
+                <div class="portfolio-box">
+                    <div class="row gx-3 gy-4 pb-3 mb-5 pb-lg-3 mb-lg-3 justify-content-around
+                    align-items-center">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-img">
+                            <img src="project1.png" alt="" height="400px" width="1000px">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-text">
+                            <span>Web Design</span>
+                            <h4>MedRent</h4>
+                            <p>
+                                MedRent – Medical Thrifting Platform
+Developed a responsive frontend using HTML, CSS, and JavaScript with features like search, filtering, and real-time updates for a smooth and user-friendly experience.
+                            </p>
+                            <a href="#" class="colored-btn mt-1">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row gx-3 gy-4 pb-3 mb-5 pb-lg-3 mb-lg-3 justify-content-around
+                    align-items-center flex-row-reverse">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-img">
+                            <img src="project2.png" alt="" height="400px" width="1000px">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-text">
+                            <span>Web Design</span>
+                            <h4>Chatbot – ChatGPT-like Clone</h4>
+                            <p>
+Created a ChatGPT-like Chatbot using HTML, CSS, and JavaScript, offering an interactive user interface for real-time conversations. The chatbot simulates human-like responses and engages users through dynamic message handling and smooth UI interactions. Designed with a focus on clean layout and responsive design, it showcases foundational front-end development skills and basic principles of conversational AI simulation using JavaScript. This project demonstrates my ability to build interactive web components without relying on external frameworks.                            </p>
+                            <a href="#" class="colored-btn mt-1">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row gx-3 gy-4 pb-3 mb-5 pb-lg-3 mb-lg-3 justify-content-around
+                    align-items-center ">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-img">
+                            <img src="project3.png" alt="" height="400px" width="1000px">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-text">
+                            <span>Web Design</span>
+                            <h4>Weather Forecast Website</h4>
+                            <p>
+a responsive weather forecast website using HTML, JavaScript, and Tailwind CSS. The application fetches real-time weather data based on user input, providing details such as temperature, humidity, wind speed, and weather conditions using a public weather API. Designed a clean and user-friendly interface with responsive layouts for optimal viewing across devices. This project highlights my front-end development skills and ability to work with APIs to build dynamic, data-driven web applications.
+                            </p>
+                            <a href="#" class="colored-btn mt-1">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row gx-3 gy-4 pb-3 mb-5 pb-lg-3 mb-lg-3 justify-content-around
+                    align-items-center flex-row-reverse">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-img">
+                            <img src="project4.png" alt="" height="400px" width="1000px">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-text">
+                            <span>Web Design</span>
+                            <h4>StudyNotion</h4>
+                            <p>
+                                A full-stack EdTech platform, Studynotion, using the MERN stack (MongoDB, Express.js, React.js, Node.js), 
+                                integrated with Redux for state management and styled with Tailwind CSS. 
+                                The platform offers a seamless learning experience with features like user authentication, course creation, video lectures, and real-time progress tracking. 
+                                Implemented secure RESTful APIs, dynamic UI components, and responsive design to ensure an interactive and scalable user experience. 
+                                Studynotion reflects my ability to build robust, production-ready applications in a collaborative, fast-paced development environment.                            </p>
+                            <a href="#" class="colored-btn mt-1">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row gx-3 gy-4 pb-3 mb-5 pb-lg-3 mb-lg-3 justify-content-around
+                    align-items-center ">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-img">
+                            <img src="project5.png" alt="" height="400px" width="1200px">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                        <div class="portfolio-text">
+                            <span>Web Design</span>
+                            <h4>Food Delivery Website</h4>
+                            <p>
+A feature-rich Food Delivery Platform using React.js, Node.js, Express.js, and MongoDB, with Redux for efficient state management and Tailwind CSS for responsive UI design. Integrated Stripe API for secure and seamless online payments. The platform includes functionalities such as user authentication, real-time order tracking, restaurant and menu management, and dynamic cart updates. Focused on creating an intuitive user interface and optimized backend to ensure a smooth, fast, and secure food ordering experience. This project demonstrates my skills in full-stack web development and third-party API integration.                            </p>
+                            <a href="#" class="colored-btn mt-1">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--contact scetion-->
+    <section id="contact" class="section bg-dark">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h2 class="text-dark">Get in touch</h2>
+                        <p class="lead">lorem lorem lorem</p>
+                        <form action="#">
+                            <div class="row gy-4 gx-3">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            Name
+                                        </label>
+                                        <input type="text" class="form-control" name="name">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            Email
+                                        </label>
+                                        <input type="email" class="form-control" name="email">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            Subject
+                                        </label>
+                                        <input type="text" class="form-control" name="subject">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            Message
+                                        </label>
+                                        <textarea 
+                                        name="message" 
+                                        rows="3" 
+                                        class="form-control">
+                                    </textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="colored-btn" type="submit">
+                                        Send Message
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 ms-auto col-xl-4">
+                    <div class="pb-5 d-none d-md-block">
+                        <img src="photo4.png" class="w-100" alt="" height="400px" width="100px">
+                    </div>
+
+                    <ul class="contact-info">
+                        <li>
+                            <div class="icon bg-1">
+                            <i class="fa-solid fa-phone" style="color: #000000;"></i>
+                        </div>
+                        <div class="col ps-3">
+                            <h5>Phone</h5>
+                            <p>+91-8815768853</p>
+                        </div>
+
+                        </li>
+                        
+                        <li>
+                            <div class="icon bg-2">
+                            <i class="fa-regular fa-envelope" style="color: #000000;"></i>
+                        </div>
+                        <div class="col ps-3">
+                            <h5>Mail</h5>
+                            <p>kritikachoubey20032gmail.com</p>
+                        </div>
+
+                        </li>
+
+                        <li>
+                            <div class="icon bg-3">
+                            <i class="fa-brands fa-linkedin-in" style="color: #000000;"></i>
+                        </div>
+                        <div class="col ps-3">
+                            <h5>Linkedin</h5>
+                            <p>www.linkedin.com/in/kritika-choubey-327590224</p>
+                        </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 py-2">
+                <div class="nav justify-content-center
+                justify-content-md-start">
+                <a href="#"><i class="fa-brands fa-facebook" style="color: #2b63c5;"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter" style="color: #000000;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram" style="color: #e74b9e;"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin" style="color: #2e4c7f;"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest" style="color: #a81a1a;"></i></a>
+            </div>
+            </div>
+            <div class="col-md-6 py-2 text-center text-md-end">
+                <p class="m-0">2025 Copyright all right reserved  | 
+                    Developed by <a href="#">Kritika Choubey</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+    
+    <script src="typed.js-main.zip"></script>
+</body>
+</html>
