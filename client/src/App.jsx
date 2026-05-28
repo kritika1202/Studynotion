@@ -27,7 +27,7 @@ export default function App() {
   if (!initialized && token) return <Spinner fullPage />;
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.REACT_APP_BASENAME || "/"}>
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">

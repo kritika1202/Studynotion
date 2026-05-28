@@ -18,6 +18,9 @@ REQUIRED_ENV.forEach((key) => {
 
 const app = express();
 
+// Render (and most cloud platforms) sit behind a reverse proxy
+app.set("trust proxy", 1);
+
 connectDB();
 
 // Security headers
