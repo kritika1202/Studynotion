@@ -6,7 +6,7 @@ An EdTech platform where students can browse courses, enroll, and track their pr
 
 **Stack:** React 18 · Redux Toolkit · Node.js · Express · MongoDB · Tailwind CSS
 
----
+<br/>
 
 <img src="screenshots/home.jpeg" width="300" alt="Homepage" />
 
@@ -117,11 +117,12 @@ studynotion/
 - Frontend on **Vercel** → [studynotion.kritika.online](https://studynotion.kritika.online)
 - Backend on **Render** (free tier — first request after idle may take ~30s)
 - Database on **MongoDB Atlas** (M0 free cluster)
-
----
-
+<br/>
+<br/>
 <img src="screenshots/course-detail.jpeg" width="300" alt="Course Detail" />
+<br/>
 <img src="screenshots/dashboard.jpeg" width="300" alt="Dashboard" />
+<br/>
 <img src="screenshots/login.jpeg" width="300" alt="Login" />
 
 ---
