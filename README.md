@@ -1,18 +1,37 @@
 # StudyNotion
 
-An EdTech platform where students can browse courses, enroll, and track their progress. Built this end-to-end to get comfortable connecting a React + Redux frontend to a real REST API with auth, MongoDB, and proper error handling.
+An EdTech platform where students can browse courses, enroll, and track their progress. Built end-to-end with React, Redux, Node.js, Express, and MongoDB.
+
+**Live:** [studynotion.kritika.online](https://studynotion.kritika.online)
 
 **Stack:** React 18 · Redux Toolkit · Node.js · Express · MongoDB · Tailwind CSS
 
 ---
 
+## Screenshots
+
+![Home](screenshots/home.jpeg)
+*Homepage with featured courses and hero section*
+
+![Course Detail](screenshots/course-detail.jpeg)
+*Course detail page with collapsible curriculum*
+
+![Dashboard](screenshots/dashboard.jpeg)
+*Student dashboard showing progress across enrolled courses*
+
+![Login](screenshots/login.jpeg)
+*Login page*
+
+---
+
 ## What it does
 
-- Course catalog with category/level filters and search — results are URL-synced so you can share a filtered link
-- Course detail page with a collapsible curriculum and an enrollment sidebar
-- Student dashboard showing progress bars per course, grouped by in-progress / not started / completed
-- JWT auth — register, log in, protected routes
-- 11 REST endpoints (auth, courses, enrollments, progress tracking)
+- Course catalog — filter by category, level, or search. Filters sync to the URL so you can share a link
+- Course detail page with collapsible curriculum sections and lecture durations
+- One-click enrollment with a sticky sidebar
+- Student dashboard showing per-course progress bars, grouped by in-progress / not started / completed
+- JWT auth — register, log in, protected routes redirect back after login
+- 11 REST endpoints across auth, courses, enrollments, and progress tracking
 
 ---
 
@@ -26,18 +45,18 @@ npm run install:all
 
 # Set up environment
 cp server/.env.example server/.env
-# Fill in MONGO_URI and JWT_SECRET in server/.env
+# Fill in MONGO_URI and JWT_SECRET
 
-# Seed some sample courses
+# Seed sample courses
 npm run seed
 
 # Start both servers
 npm run dev
 ```
 
-React runs on `localhost:3000`, the API on `localhost:5000`.
+React on `localhost:3000`, API on `localhost:5000`.
 
-To generate a JWT secret quickly:
+Generate a JWT secret:
 ```bash
 node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ```
@@ -48,7 +67,7 @@ Other scripts: `npm run server` (API only), `npm run client` (React only).
 
 ## API
 
-All endpoints live under `/api`. Protected routes need `Authorization: Bearer <token>`.
+Base URL: `/api` — protected routes need `Authorization: Bearer <token>`
 
 ```
 POST   /auth/register              { name, email, password }
@@ -67,7 +86,7 @@ GET    /progress/:courseId         🔒
 PUT    /progress/:courseId/lectures/:lectureId  🔒
 ```
 
-The `api.http` file in the root has all of these pre-filled — open it in VS Code with the REST Client extension and you can run every request without Postman.
+All requests pre-filled in `api.http` — open with VS Code REST Client.
 
 ---
 
@@ -76,8 +95,8 @@ The `api.http` file in the root has all of these pre-filled — open it in VS Co
 ```
 studynotion/
 ├── server/
-│   ├── config/          db connection, constants (JWT expiry, rate limits)
-│   ├── controllers/     thin route handlers — auth, courses, enrollment, progress
+│   ├── config/          db connection, constants
+│   ├── controllers/     auth, courses, enrollment, progress
 │   ├── middleware/       JWT auth, error handler, field validation
 │   ├── models/          User, Course (nested sections/lectures), Enrollment, Progress
 │   ├── routes/
@@ -86,19 +105,27 @@ studynotion/
     ├── components/      Navbar, CourseCard, CourseFilter, ProgressBar, etc.
     ├── pages/           Home, Courses, CourseDetail, Dashboard, Login, Register
     ├── redux/           store + 4 slices (auth, courses, enrollments, progress)
-    └── services/api.js  Axios instance with JWT interceptor
+    └── services/api.js  Axios with JWT interceptor
 ```
 
 ---
 
-## A few things worth knowing if you dig into the code
+## A few things worth knowing
 
-**Redux over Context** — I started with Context but switched after noticing it was re-rendering the Navbar on every progress update. RTK slices isolate state domains, and `createAsyncThunk` handles the loading/error lifecycle without extra code.
+**Redux over Context** — switched after noticing Context was re-rendering the Navbar on every progress update. RTK slices isolate state by domain and `createAsyncThunk` handles loading/error lifecycle without extra code.
 
-**Lazy loading** — each page is a separate `React.lazy` import in `App.jsx`. The Dashboard and CourseDetail pages are never downloaded until the user navigates there.
+**Lazy loading** — each page is a separate `React.lazy` import in `App.jsx`, so the Dashboard and CourseDetail are never downloaded until the user navigates there.
 
-**Enrollment duplicates** — rather than querying first, the Enrollment model has a compound unique index on `{ student, course }`. A second enroll attempt hits a Mongo `11000` error which the error handler converts to a 409.
+**Enrollment duplicates** — the Enrollment model has a compound unique index on `{ student, course }`. A second enroll attempt hits a Mongo `11000` error which the error handler converts to a 409, no extra query needed.
 
-**Progress percentage** — `Course` has a `totalLectures` virtual that sums across sections. `Progress.getPercentage()` divides completed count by that. When it hits 100, the enrollment is automatically marked complete.
+**Progress percentage** — `Course` has a `totalLectures` virtual that sums across sections. `Progress.getPercentage()` divides completed lectures by that. Hits 100% → enrollment is automatically marked complete.
 
-**Rate limiting** — auth routes are capped at 20 requests per 15 minutes (vs 100 globally) to slow brute-force without needing anything heavier.
+**Rate limiting** — auth routes capped at 20 req/15 min vs 100 globally. Deployed on Render which sits behind a reverse proxy, so `trust proxy: 1` is set to let `express-rate-limit` read the real client IP correctly.
+
+---
+
+## Deployment
+
+- Frontend on **Vercel** → [studynotion.kritika.online](https://studynotion.kritika.online)
+- Backend on **Render** (free tier — first request after idle may take ~30s)
+- Database on **MongoDB Atlas** (M0 free cluster)
