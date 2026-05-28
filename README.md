@@ -8,8 +8,10 @@ An EdTech platform where students can browse courses, enroll, and track their pr
 
 ---
 
-![Home](screenshots/home.jpeg)
-*Homepage with featured courses and hero section*
+<img src="screenshots/home.jpeg" width="300" alt="Homepage" />
+<img src="screenshots/course-detail.jpeg" width="300" alt="Course Detail" />
+<img src="screenshots/dashboard.jpeg" width="300" alt="Dashboard" />
+<img src="screenshots/login.jpeg" width="300" alt="Login" />
 
 ---
 
@@ -121,13 +123,3 @@ studynotion/
 
 ---
 
-![Course Detail](screenshots/course-detail.jpeg)
-*Course detail page with collapsible curriculum*
-
-![Dashboard](screenshots/dashboard.jpeg)
-*Student dashboard showing progress across enrolled courses*
-
-![Login](screenshots/login.jpeg)
-*Login page*
-
----
