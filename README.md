@@ -8,19 +8,8 @@ An EdTech platform where students can browse courses, enroll, and track their pr
 
 ---
 
-## Screenshots
-
 ![Home](screenshots/home.jpeg)
 *Homepage with featured courses and hero section*
-
-![Course Detail](screenshots/course-detail.jpeg)
-*Course detail page with collapsible curriculum*
-
-![Dashboard](screenshots/dashboard.jpeg)
-*Student dashboard showing progress across enrolled courses*
-
-![Login](screenshots/login.jpeg)
-*Login page*
 
 ---
 
@@ -129,3 +118,16 @@ studynotion/
 - Frontend on **Vercel** → [studynotion.kritika.online](https://studynotion.kritika.online)
 - Backend on **Render** (free tier — first request after idle may take ~30s)
 - Database on **MongoDB Atlas** (M0 free cluster)
+
+---
+
+![Course Detail](screenshots/course-detail.jpeg)
+*Course detail page with collapsible curriculum*
+
+![Dashboard](screenshots/dashboard.jpeg)
+*Student dashboard showing progress across enrolled courses*
+
+![Login](screenshots/login.jpeg)
+*Login page*
+
+---
