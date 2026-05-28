@@ -1,0 +1,85 @@
+# StudyNotion REST API — VS Code REST Client / JetBrains HTTP Client
+# Install "REST Client" extension, then click "Send Request" above any block.
+# Set @token after logging in.
+
+@base = http://localhost:5000/api
+@token = PASTE_JWT_HERE
+
+### Health check
+GET {{base}}/health
+
+# ─── Auth ─────────────────────────────────────────────────────────────────────
+
+### Register a new student
+# @name register
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Demo Student",
+  "email": "demo@student.com",
+  "password": "password123"
+}
+
+### Login
+# @name login
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "demo@student.com",
+  "password": "password123"
+}
+
+### Get current user (requires token)
+GET {{base}}/auth/me
+Authorization: Bearer {{token}}
+
+# ─── Courses ──────────────────────────────────────────────────────────────────
+
+### Get all courses
+GET {{base}}/courses
+
+### Filter by category
+GET {{base}}/courses?category=Web Development
+
+### Filter by level + paginate
+GET {{base}}/courses?level=Beginner&page=1&limit=6
+
+### Search
+GET {{base}}/courses?search=react
+
+### Get featured courses
+GET {{base}}/courses/featured
+
+### Get a single course (replace with a real _id from the list above)
+GET {{base}}/courses/REPLACE_WITH_COURSE_ID
+
+# ─── Enrollments ──────────────────────────────────────────────────────────────
+
+### Enroll in a course (requires token)
+POST {{base}}/enrollments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "courseId": "REPLACE_WITH_COURSE_ID"
+}
+
+### My enrollments (requires token)
+GET {{base}}/enrollments/my
+Authorization: Bearer {{token}}
+
+# ─── Progress ─────────────────────────────────────────────────────────────────
+
+### Dashboard stats (requires token)
+GET {{base}}/progress/dashboard/stats
+Authorization: Bearer {{token}}
+
+### Get progress for a course (requires token)
+GET {{base}}/progress/REPLACE_WITH_COURSE_ID
+Authorization: Bearer {{token}}
+
+### Mark a lecture complete (requires token)
+PUT {{base}}/progress/REPLACE_WITH_COURSE_ID/lectures/REPLACE_WITH_LECTURE_ID
+Authorization: Bearer {{token}}
