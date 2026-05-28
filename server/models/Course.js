@@ -36,10 +36,12 @@ const courseSchema = new mongoose.Schema(
 );
 
 courseSchema.virtual("totalLectures").get(function () {
+  if (!this.sections) return 0;
   return this.sections.reduce((sum, s) => sum + s.lectures.length, 0);
 });
 
 courseSchema.virtual("totalDuration").get(function () {
+  if (!this.sections) return 0;
   return this.sections.reduce(
     (sum, s) => sum + s.lectures.reduce((lSum, l) => lSum + l.duration, 0),
     0
